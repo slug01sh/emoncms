@@ -37,12 +37,12 @@ function format_time(time,format){
  */
 function getTranslations(){
     return {
-        'Tag': "<?php echo _('Tag') ?>",
-        'Feed ID': "<?php echo _('Feed ID') ?>",
-        'Feed Interval': "<?php echo _('Feed Interval') ?>",
-        'Feed Start Time': "<?php echo _('Feed Start Time') ?>",
-        'Realtime': "<?php echo _('Realtime') ?>",
-        'Daily': "<?php echo _('Daily') ?>"
+        'Tag': "<?php echo _('标签') ?>",
+        'Feed ID': "<?php echo _('反馈ID') ?>",
+        'Feed Interval': "<?php echo _('反馈间隔') ?>",
+        'Feed Start Time': "<?php echo _('反馈开始时间') ?>",
+        'Realtime': "<?php echo _('实时') ?>",
+        'Daily': "<?php echo _('日常') ?>"
     }
 }
 /**
@@ -151,31 +151,31 @@ body{padding:0!important}
 
 </style>
 <div id="feed-header">
-    <span id="api-help" style="float:right"><a href="<?php echo $path; ?>feed/api"><?php echo _('Feed API Help'); ?></a></span>
-    <h3><?php echo _('Feeds'); ?></h3>
+    <span id="api-help" style="float:right"><a href="<?php echo $path; ?>feed/api"><?php echo _('反馈的API指南'); ?></a></span>
+    <h3><?php echo _('反馈'); ?></h3>
 </div>
 
 <div class="controls" data-spy="affix" data-offset-top="100">
-    <button id="expand-collapse-all" class="btn" title="<?php echo _('Collapse') ?>" data-alt-title="<?php echo _('Expand') ?>"><i class="icon icon-resize-small"></i></button>
-    <button id="select-all" class="btn" title="<?php echo _('Select all') ?>" data-alt-title="<?php echo _('Unselect all') ?>"><i class="icon icon-check"></i></button>
-    <button class="btn feed-edit hide" title="<?php echo _('Edit') ?>"><i class="icon-pencil"></i></button>
-    <button class="btn feed-delete hide" title="<?php echo _('Delete') ?>"><i class="icon-trash" ></i></button>
-    <button class="btn feed-download hide" title="<?php echo _('Download') ?>"><i class="icon-download"></i></button>
-    <button class="btn feed-graph hide" title="<?php echo _('Graph view') ?>"><i class="icon-eye-open"></i></button>
-    <button class="btn feed-process hide" title="<?php echo _('Process config') ?>"><i class="icon-wrench"></i></button>
+    <button id="expand-collapse-all" class="btn" title="<?php echo _('折叠') ?>" data-alt-title="<?php echo _('展开') ?>"><i class="icon icon-resize-small"></i></button>
+    <button id="select-all" class="btn" title="<?php echo _('选中所有') ?>" data-alt-title="<?php echo _('取消选中') ?>"><i class="icon icon-check"></i></button>
+    <button class="btn feed-edit hide" title="<?php echo _('编辑') ?>"><i class="icon-pencil"></i></button>
+    <button class="btn feed-delete hide" title="<?php echo _('删除') ?>"><i class="icon-trash" ></i></button>
+    <button class="btn feed-download hide" title="<?php echo _('下载') ?>"><i class="icon-download"></i></button>
+    <button class="btn feed-graph hide" title="<?php echo _('图表视图') ?>"><i class="icon-eye-open"></i></button>
+    <button class="btn feed-process hide" title="<?php echo _('进程配置') ?>"><i class="icon-wrench"></i></button>
 </div>
 
 <div id="table" class="feed-list"></div>
 
 <div id="feed-none" class="alert alert-block hide">
-    <h4 class="alert-heading"><?php echo _('No feeds created'); ?></h4>
-    <p><?php echo _('Feeds are where your monitoring data is stored. The route for creating storage feeds is to start by creating inputs (see the inputs tab). Once you have inputs you can either log them straight to feeds or if you want you can add various levels of input processing to your inputs to create things like daily average data or to calibrate inputs before storage. Alternatively you can create Virtual feeds, this is a special feed that allows you to do post processing on existing storage feeds data, the main advantage is that it will not use additional storage space and you may modify post processing list that gets applyed on old stored data. You may want the next link as a guide for generating your request: '); ?><a href="api"><?php echo _('Feed API helper'); ?></a></p>
+    <h4 class="alert-heading"><?php echo _('没有创建反馈'); ?></h4>
+    <p><?php echo _('反馈是你监控存储数据的地方。创建存储反馈需要先从创建“输入”开始（请参阅“输入”选项卡）。 当你有了输入，你可以直接将它们记录到“反馈”中，或者如果你愿意，你可以在输入中添加不同级别的输入处理。比如：创建每日平均数据、在存储之前校准输入。 或者，您可以创建虚拟提要，这是一个特殊反馈，允许您对已经存储数据进行处理，主要优点是它不会使用额外的存储空间，您可以修改并应用于旧存储的后处理列表数据。 您可能需要另一个链接作为生成请求的指南：'); ?><a href="api"><?php echo _('反馈的API指南'); ?></a></p>
 </div>
 
 <div id="feed-footer">
-    <button id="refreshfeedsize" class="btn btn-small" ><i class="icon-refresh" ></i>&nbsp;<?php echo _('Refresh feed size'); ?></button>
-    <button id="addnewfeed" class="btn btn-small" data-toggle="modal" data-target="#newFeedNameModal"><i class="icon-plus-sign" ></i>&nbsp;<?php echo _('New feed'); ?></button>
-    <button id="importdata" class="btn btn-small" data-toggle="modal" data-target="#importDataModal"><i class="icon-arrow-up" ></i>&nbsp;<?php echo _('Import data'); ?></button>
+    <button id="refreshfeedsize" class="btn btn-small" ><i class="icon-refresh" ></i>&nbsp;<?php echo _('刷新反馈的使用空间'); ?></button>
+    <button id="addnewfeed" class="btn btn-small" data-toggle="modal" data-target="#newFeedNameModal"><i class="icon-plus-sign" ></i>&nbsp;<?php echo _('新的反馈'); ?></button>
+    <button id="importdata" class="btn btn-small" data-toggle="modal" data-target="#importDataModal"><i class="icon-arrow-up" ></i>&nbsp;<?php echo _('导入数据'); ?></button>
 </div>
 <div id="feed-loader" class="ajax-loader"></div>
 
@@ -186,22 +186,22 @@ body{padding:0!important}
 <div id="feedEditModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="feedEditModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="feedEditModalLabel"><?php echo _('Edit feed'); ?></h3>
+        <h3 id="feedEditModalLabel"><?php echo _('编辑反馈'); ?></h3>
     </div>
     <div class="modal-body">
-        <p><?php echo _('Feed node:'); ?><br>
+        <p><?php echo _('反馈节点:'); ?><br>
         <div class="autocomplete">
             <input id="feed-node" type="text" style="margin-bottom:0">
         </div>
         </p>
 
-        <p><?php echo _('Feed name:'); ?><br>
+        <p><?php echo _('反馈名称:'); ?><br>
         <input id="feed-name" type="text"></p>
 
-        <p><?php echo _('Make feed public:'); ?>
+        <p><?php echo _('公开反馈:'); ?>
         <input id="feed-public" type="checkbox"></p>
 
-        <p><?php echo _('Feed Unit'); ?></p>
+        <p><?php echo _('反馈单位'); ?></p>
         <div class="input-prepend">
         <select id="feed_unit_dropdown" style="width:auto">
             <option value=""></option>
@@ -214,15 +214,15 @@ body{padding:0!important}
             }
         }
         ?>
-            <option value="_other"><?php echo _('Other'); ?></option>
+            <option value="_other"><?php echo _('其他'); ?></option>
         </select>
         <input type="text" id="feed_unit_dropdown_other" style="width:100px"/>
         </div>
     </div>
     <div class="modal-footer">
         <div id="feed-edit-save-message" style="position:absolute"></div>
-        <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo _('Close'); ?></button>
-        <button id="feed-edit-save" class="btn btn-primary"><?php echo _('Save'); ?></button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo _('关闭'); ?></button>
+        <button id="feed-edit-save" class="btn btn-primary"><?php echo _('保存'); ?></button>
     </div>
 </div>
 
@@ -234,24 +234,24 @@ body{padding:0!important}
 <div id="feedDeleteModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="feedDeleteModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="feedDeleteModalLabel"><?php echo _('Delete feed'); ?> 
-        <span id="feedDelete-message" class="label label-warning" data-default="<?php echo _('Deleting a feed is permanent.'); ?>"><?php echo _('Deleting a feed is permanent.'); ?></span>
+        <h3 id="feedDeleteModalLabel"><?php echo _('删除反馈'); ?> 
+        <span id="feedDelete-message" class="label label-warning" data-default="<?php echo _('删除反馈后无法找回.'); ?>"><?php echo _('删除反馈后无法找回.'); ?></span>
         </h3>
     </div>
     <div class="modal-body">
         <div class="clearfix d-flex row">
             <div id="clearContainer" class="span6">
                 <div style="min-height:12.1em; position:relative" class="well well-small">
-                    <h4 class="text-info"><?php echo _('Clear') ?>:</h4>
-                    <p><?php echo _('Empty feed of all data') ?></p>
-                    <button id="feedClear-confirm" class="btn btn-inverse" style="position:absolute;bottom:.8em"><?php echo _('Clear Data'); ?>&hellip;</button>
+                    <h4 class="text-info"><?php echo _('清空') ?>:</h4>
+                    <p><?php echo _('清空反馈的所有数据') ?></p>
+                    <button id="feedClear-confirm" class="btn btn-inverse" style="position:absolute;bottom:.8em"><?php echo _('清空数据'); ?>&hellip;</button>
                 </div>
             </div>
 
             <div id="trimContainer" class="span6">
                 <div class="well well-small">
-                    <h4 class="text-info"><?php echo _('Trim') ?>:</h4>
-                    <p><?php echo _('Empty feed data up to') ?>:</p>
+                    <h4 class="text-info"><?php echo _('修剪') ?>:</h4>
+                    <p><?php echo _('清空反馈数据到：') ?>:</p>
                     <div id="trim_start_time_container" class="control-group" style="margin-bottom:1.3em">
                         <div class="controls">
                             <div id="feed_trim_datetimepicker" class="input-append date" style="margin-bottom:0">
@@ -259,29 +259,29 @@ body{padding:0!important}
                                 <span class="add-on"> <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar"></i></span>
                             </div>
                             <div class="btn-group" style="margin-bottom:-4px">
-                                <button class="btn btn-mini active" title="<?php echo _('Set to the start date') ?>" data-relative_time="start"><?php echo _('Start') ?></button>
-                                <button class="btn btn-mini" title="<?php echo _('One year ago') ?>" data-relative_time="-1y"><?php echo _('- 1 year') ?></button>
-                                <button class="btn btn-mini" title="<?php echo _('Two years ago') ?>" data-relative_time="-2y"><?php echo _('- 2 year') ?></button>
-                                <button class="btn btn-mini" title="<?php echo _('Set to the current date/time') ?>" data-relative_time="now"><?php echo _('Now') ?></button>
+                                <button class="btn btn-mini active" title="<?php echo _('设置开始时间') ?>" data-relative_time="start"><?php echo _('开始') ?></button>
+                                <button class="btn btn-mini" title="<?php echo _('一年前') ?>" data-relative_time="-1y"><?php echo _('- 1 年') ?></button>
+                                <button class="btn btn-mini" title="<?php echo _('两年前') ?>" data-relative_time="-2y"><?php echo _('- 2 年') ?></button>
+                                <button class="btn btn-mini" title="<?php echo _('设置为当前时间') ?>" data-relative_time="now"><?php echo _('现在') ?></button>
                             </div>
                         </div>
                     </div>
-                    <button id="feedTrim-confirm" class="btn btn-inverse"><?php echo _('Trim Data'); ?>&hellip;</button>
+                    <button id="feedTrim-confirm" class="btn btn-inverse"><?php echo _('修建数据'); ?>&hellip;</button>
                 </div>
             </div>
         </div>
         
         <div class="well well-small" style="margin-bottom:0">
-            <h4 class="text-info"><?php echo _('Delete')?>: <span id="feedProcessList"></span></h4>
-            <p id="deleteFeedText"><?php echo _('If you have Input Processlist processors that use this feed, after deleting it, review that process lists or they will be in error, freezing other Inputs. Also make sure no Dashboards use the deleted feed.'); ?></p>
-            <p id="deleteVirtualFeedText"><?php echo _('This is a Virtual Feed, after deleting it, make sure no Dashboard continue to use the deleted feed.'); ?></p>
-            <button id="feedDelete-confirm" class="btn btn-danger"><?php echo _('Delete feed permanently'); ?></button>
+            <h4 class="text-info"><?php echo _('删除')?>: <span id="feedProcessList"></span></h4>
+            <p id="deleteFeedText"><?php echo _('如果你的输入流程处理器使用了该反馈，请在删除它后查看流程处理器，否则它们将可能会出错导致冻结其他输入。还要确保没有仪表盘使用已经删除的反馈。'); ?></p>
+            <p id="deleteVirtualFeedText"><?php echo _('这是一个虚拟反馈，删除后请确保没有仪表盘继续使用已经删除的反馈'); ?></p>
+            <button id="feedDelete-confirm" class="btn btn-danger"><?php echo _('永久删除反馈'); ?></button>
         </div>
     </div>
     <div class="modal-footer">
         <div id="feeds-to-delete" class="pull-left"></div>
         <div id="feedDelete-loader" class="ajax-loader" style="display:none;"></div>
-        <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo _('Close'); ?></button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo _('关闭'); ?></button>
     </div>
 </div>
 
@@ -291,14 +291,14 @@ body{padding:0!important}
 <div id="newFeedNameModal" class="modal hide keyboard" tabindex="-1" role="dialog" aria-labelledby="newFeedNameModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="newFeedNameModalLabel"><?php echo _('New Feed'); ?></h3>
+        <h3 id="newFeedNameModalLabel"><?php echo _('新的反馈'); ?></h3>
     </div>
     <div class="modal-body">
-        <label><?php echo _('Feed Name: '); ?></label>
+        <label><?php echo _('反馈名称: '); ?></label>
         <input type="text" value="New Feed" id="newfeed-name">
-        <label><?php echo _('Feed Tag: '); ?></label>
+        <label><?php echo _('反馈标签: '); ?></label>
         <input type="text" value="" id="newfeed-tag">
-        <label><?php echo _('Feed Engine: '); ?></label>
+        <label><?php echo _('反馈引擎: '); ?></label>
         <select id="newfeed-engine" style="width:350px">
             <option value="7" selected>VIRTUAL Feed</option>
             <?php foreach (Engine::get_all_descriptive() as $engine) { ?>
@@ -312,8 +312,8 @@ body{padding:0!important}
         </select>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo _('Cancel'); ?></button>
-        <button id="newfeed-save" class="btn btn-primary"><?php echo _('Save'); ?></button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true"><?php echo _('取消'); ?></button>
+        <button id="newfeed-save" class="btn btn-primary"><?php echo _('保存'); ?></button>
     </div>
 </div>
 
@@ -329,7 +329,7 @@ var nodes = {};
 var selected_feeds = {};
 var local_cache_key = 'feed_nodes_display';
 var nodes_display = {};
-var feed_engines = ['MYSQL','TIMESTORE','PHPTIMESERIES','GRAPHITE','PHPTIMESTORE','PHPFINA','PHPFIWA (No longer supported)','VIRTUAL','MEMORY','REDISBUFFER','CASSANDRA'];
+var feed_engines = ['MYSQL','TIMESTORE引擎','PHPTIMESERIES引擎','GRAPHITE引擎','PHPTIMESTOR引擎E','PHPFINA引擎','PHPFIWA引擎 (No longer supported)','VIRTUAL引擎','MEMORY引擎','REDISBUFFER引擎','CASSANDRA引擎'];
 var engines_hidden = <?php echo json_encode($settings["feed"]['engines_hidden']); ?>;
 
 var available_intervals = <?php echo json_encode(Engine::available_intervals()); ?>;
@@ -424,9 +424,9 @@ function update_feed_list() {
                                   _('Feed ID') + ': ' + feedid]
                 
                 if(feed.engine == 5) {
-                    title_lines.push(_('Feed Interval')+": "+(feed.interval||'')+'s')
+                    title_lines.push(_('反馈间隔')+": "+(feed.interval||'')+'s')
                 } else {
-                    title_lines.push(_('Feed Interval (approx)')+": "+(feed.interval||'')+'s')
+                    title_lines.push(_('反馈间隔 (大约)')+": "+(feed.interval||'')+'s')
                 }
                 var processListHTML = '';
                 if(feed.processList!=undefined && feed.processList.length > 0){
@@ -435,12 +435,12 @@ function update_feed_list() {
 
                 // show the start time if available
                 if(feed.start_time > 0) {
-                    title_lines.push(_('Feed Start Time')+": "+feed.start_time);
+                    title_lines.push(_('反馈开始时间')+": "+feed.start_time);
                     title_lines.push(format_time(feed.start_time,'LL LTS')+" UTC");
                 }
 
                 if(feed.end_time > 0) {
-                    title_lines.push(_('Feed End Time')+": "+feed.end_time);
+                    title_lines.push(_('反馈结束时间')+": "+feed.end_time);
                     title_lines.push(format_time(feed.end_time,'LL LTS')+" UTC");
                 }
 
@@ -455,6 +455,7 @@ function update_feed_list() {
                 if (feed['public']==1) publicfeed = "<i class='icon-globe'></i>";
                 
                 out += '<div class="public text-center" data-col="E">'+publicfeed+'</div>';
+                console.log(feed.engine);
                 out += '  <div class="engine" data-col="G">'+feed_engines[feed.engine]+'</div>';
                 out += '  <div class="size text-center" data-col="H">'+list_format_size(feed.size)+'</div>';
                 out += '  <div class="processlist" data-col="F">'+processListHTML+'</div>';
@@ -569,7 +570,7 @@ $(".feed-edit").click(function() {
             if (edited_feeds.length == 1) {
                 $("#feed-name").prop('disabled',false).val(feeds[feedid].name);
             } else {
-                $("#feed-name").prop('disabled',true).val('').attr('placeholder',"<?php echo _('Unable to rename multiple feeds') ?>");
+                $("#feed-name").prop('disabled',true).val('').attr('placeholder',"<?php echo _('不能重命名多个反馈') ?>");
             }
             $("#feed-node").val(feeds[feedid].tag);
             var checked = false; if (feeds[feedid]['public']==1) checked = true;
@@ -785,12 +786,12 @@ function showSelectedFeeds(feed_inputs) {
     total_selected = Object.keys(titles).length;
     if (total_selected == 1) {
     // if only one is selected display it's id & name
-        feedProcessList = total_linked > 0 ? '<span class="badge badge-default" style="padding-left:4px"><i class="icon icon-white icon-exclamation-sign"></i> <?php echo _('1 Input process associated with this feed') ?>':'';
+        feedProcessList = total_linked > 0 ? '<span class="badge badge-default" style="padding-left:4px"><i class="icon icon-white icon-exclamation-sign"></i> <?php echo _('1 和该反馈关联的输入过程') ?>':'';
         total_summary += '<h5>'+feedListShort+'</h5>';
     } else {
     // show a summary total if more than one are selected
-        feedProcessList = total_linked > 0 ? '<span class="badge badge-default" style="padding-left:4px"><i class="icon icon-white icon-exclamation-sign"></i> '+(' <?php echo _('%s Input processes associated with these feeds') ?>'.replace('%s',total_linked))+'</span>' : '';
-        total_summary += '<h5 title="'+feedListShort+'"><?php echo _('%s Feeds selected') ?> <i class="icon icon-question-sign"></i></h5>'.replace('%s', total_selected);
+        feedProcessList = total_linked > 0 ? '<span class="badge badge-default" style="padding-left:4px"><i class="icon icon-white icon-exclamation-sign"></i> '+(' <?php echo _('%s 和这些反馈关联的输入过程') ?>'.replace('%s',total_linked))+'</span>' : '';
+        total_summary += '<h5 title="'+feedListShort+'"><?php echo _('%s 被选中的反馈') ?> <i class="icon icon-question-sign"></i></h5>'.replace('%s', total_selected);
     }
     total_summary += '</div>';
     $("#feeds-to-delete").html(total_summary); // show how many feeds have been selected
@@ -860,7 +861,7 @@ function initRelativeStartDateButtons(start_time){
         if (relativeTime < startDate) {
             $btn.hide() // hide button date is beyond start date
             $btn.css({'font-style':'italic', color:'#9a9eaa'});
-            $btn.attr('title',$btn.attr('title')+' - [<?php echo _('Out of range')?>]');
+            $btn.attr('title',$btn.attr('title')+' - [<?php echo _('超出范围')?>]');
         }
     })
     // open date picker on input focus
@@ -1032,7 +1033,7 @@ function enableTrim(start_time){
                 $input.focus();
                 return false;
             }else{
-                if(confirm("<?php echo _('This is a new feature. Consider backing up your data before you continue. OK to continue?') ?>") == true) {
+                if(confirm("<?php echo _('这是一个新功能，在继续以前请考虑备份你的数据。是否确定继续？') ?>") == true) {
                     $('#trim_start_time_container').removeClass('error');
                     // set to seconds from milliseconds
                     let start_time = start_date.getTime()/1000;
@@ -1061,7 +1062,7 @@ function enableTrim(start_time){
  * @return void
  */
 function disableTrim(){
-    $('#trimContainer').attr('title','<?php echo _('"Trim" not available for this storage engine') ?>').addClass('muted')//.hide()
+    $('#trimContainer').attr('title','<?php echo _('“修剪”不适用于该存储引擎。') ?>').addClass('muted')//.hide()
         .find('h4').removeClass('text-info').addClass('muted').end()
         .find('button,input').addClass('disabled')
         .find('input').val('');
@@ -1138,7 +1139,7 @@ function enableClear(){
     $("#feedClear-confirm")
         .unbind('click')
         .click(function(){
-            if( confirm("<?php echo _('Are you sure you want to delete all the feeds data?') ?>") == true ){
+            if( confirm("<?php echo _('你确定需要删除这些所有反馈的数据吗？') ?>") == true ){
                 $modal = $('#feedDeleteModal');
                 $("#feedDelete-loader").fadeIn();
 
@@ -1161,17 +1162,17 @@ function enableClear(){
 function disableClear(){
     $("#feedClear-confirm").unbind();
 
-    $('#clearContainer').attr('title','<?php echo _('"Clear" not available for this storage engine') ?>').addClass('muted')//.hide()
+    $('#clearContainer').attr('title','<?php echo _('“清空”不适用于该存储引擎。') ?>').addClass('muted')//.hide()
         .find('h4').removeClass('text-info').addClass('muted').end()
         .find('button').addClass('disabled');
 }
 
 $("#feedDelete-confirm").click(function(){
-    if( confirm("<?php echo _('Are you sure you want to delete?') ?>") == true) {
+    if( confirm("<?php echo _('你确定想要删除？') ?>") == true) {
         for (let feedid in selected_feeds) {
             if (selected_feeds[feedid]) {
                 let response = feed.remove(feedid);
-                response = response ? response : {success:true, message: '<?php echo _("Feeds Deleted") ?>'};
+                response = response ? response : {success:true, message: '<?php echo _("反馈已成功删除") ?>'};
                 updateFeedDeleteModalMessage(response);
             }
         }
@@ -1288,11 +1289,11 @@ $("#save-processlist").click(function (){
 
 // Translations
 var downloadlimit = <?php echo $settings['feed']['csv_downloadlimit_mb']; ?>;
-var str_enter_valid_start_date = "<?php echo _('Please enter a valid start date.'); ?>";
-var str_enter_valid_end_date = "<?php echo _('Please enter a valid end date.'); ?>";
-var str_start_before_end = "<?php echo _('Start date must be further back in time than end date.'); ?>";
-var str_interval_for_download = "<?php echo _('Please select interval to download.'); ?>";
-var str_large_download = "<?php echo _('Estimated download file size is large.'); ?>\n<?php echo _('Server could take a long time or abort depending on stored data size.'); ?>\n<?php echo _('Limit is'); ?> "+downloadlimit+"MB.\n\n<?php echo _('Try exporting anyway?'); ?>";
+var str_enter_valid_start_date = "<?php echo _('请输入正确的开始时间。'); ?>";
+var str_enter_valid_end_date = "<?php echo _('请输入正确的结束时间。'); ?>";
+var str_start_before_end = "<?php echo _('开始时间必须小于结束时间。'); ?>";
+var str_interval_for_download = "<?php echo _('请选择一个时间间隔。'); ?>";
+var str_large_download = "<?php echo _('估计下载文件很大。'); ?>\n<?php echo _('服务器可能需要很长时间或中止，具体取决于存储的数据大小。'); ?>\n<?php echo _('限制是'); ?> "+downloadlimit+"MB.\n\n<?php echo _('依然尝试导出?'); ?>";
 </script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/feed/Views/exporter.js"></script>
 <script type="text/javascript" src="<?php echo $path; ?>Modules/feed/Views/importer.js?v=2"></script>

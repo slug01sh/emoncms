@@ -71,7 +71,7 @@ class Process_ProcessList
         $list = array(
            array(
               "id_num"=>1,
-              "name"=>_("Log to feed"),
+              "name"=>_("记录到反馈"),
               "short"=>"log",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"log_to_feed",
@@ -80,33 +80,33 @@ class Process_ProcessList
               "group"=>_("Main"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY,Engine::CASSANDRA),
               "nochange"=>true,
-              "description"=>_("<p><b>Log to feed:</b> This processor logs to a timeseries feed which can then be used to explore historic data. This is recommended for logging power, temperature, humidity, voltage and current data.</p><p><b>Feed engine:</b><ul><li><b>Emoncms Fixed Interval TimeSeries (PHPFina)</b> is the recommended feed engine, it is a fixed interval timeseries engine.</li><li><b>Emoncms Variable Interval TimeSeries (PHPTimeseries)</b> is for data posted at a non regular interval.</li></ul></p><p><b>Feed interval:</b> When selecting the feed interval select an interval that is the same as, or longer than the update rate that is set in your monitoring equipment. Setting the interval rate to be shorter than the update rate of the equipment causes un-needed disk space to be used up.</p>")
+              "description"=>_("<p><b>记录到反馈:</b> 该处理器记录到时间序列提要，然后可用于探索历史数据。 推荐用于记录功率、温度、湿度、电压和电流数据。 </p><p><b>反馈引擎:</b><ul><li><b> 固定间隔时间序列 (PHPFina) </b> 是推荐的反馈引擎，它是一个固定间隔时间序列引擎。 </li><li><b> 可变间隔时间序列 (PHPTimeseries) </b> 用于不定期发布的数据。 </li></ul></p><p><b>反馈间隔：</b> 选择反馈间隔时，请选择与监控设备中设置的更新速率相同或更长的间隔。 将间隔率设置为小于设备的更新率会导致磁盘空间浪费。</p>")
            ),
            array(
               "id_num"=>2,
-              "name"=>_("x"),
+              "name"=>_("x 乘法"),
               "short"=>"x",
               "argtype"=>ProcessArg::VALUE,
               "function"=>"scale",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Calibration"),
-              "description"=>_("<p>Multiplies current value by given constant. This can be useful for calibrating a particular variable on the web rather than by reprogramming hardware.</p>")
+              "description"=>_("<p>将当前值乘以给定常数。这对于校准网络上的特定变量而不是通过重新编程硬件很有用。</p>")
            ),
            array(
               "id_num"=>3,
-              "name"=>_("+"),
+              "name"=>_("+ 加法"),
               "short"=>"+",
               "argtype"=>ProcessArg::VALUE,
               "function"=>"offset",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Calibration"),
-              "description"=>_("<p>Offset current value by given value. This can again be useful for calibrating a particular variable on the web rather than by reprogramming hardware.</p>")
+              "description"=>_("<p>通过给定值偏移当前值。 这对于校准网络上的特定变量而不是通过重新编程硬件再次很有用。</p>")
            ),
            array(
               "id_num"=>4,
-              "name"=>_("Power to kWh"),
+              "name"=>_("瓦特 转换为 千瓦时"),
               "short"=>"kwh",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"power_to_kwh",
@@ -115,11 +115,11 @@ class Process_ProcessList
               "group"=>_("Main"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p><b>Power to kWh:</b> Convert a power value in Watts to a cumulative kWh feed.<br><br><b>Visualisation tip:</b> Feeds created with this input processor can be used to generate daily kWh data using the BarGraph visualisation with the delta property set to 1. See <a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>Guide: Daily kWh</a><br><br>")
+              "description"=>_("<p><b>功率转换为 kWh：</b> 将以瓦特为单位的功率值转换为累积 kWh 馈送。<br><br><b>可视化提示：</b> 使用此输入处理器创建的反馈可以用于使用 delta 属性设置为 1 的 BarGraph 可视化生成每日 kWh 数据。请参阅 <a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener '>单位：每日千瓦时</a><br><br>")
            ),
            array(
               "id_num"=>5,
-              "name"=>_("Power to kWh/d"),
+              "name"=>_("瓦特 转换为 千瓦时/天"),
               "short"=>"kwhd",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"power_to_kwhd",
@@ -128,22 +128,22 @@ class Process_ProcessList
               "group"=>_("Power & Energy"),
               "engines"=>array(Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p>Convert a power value in Watts to a feed that contains an entry for the total energy used each day (kWh/d)</p>")
+              "description"=>_("<p>将以瓦特为单位的功率值转换为包含每天使用的总能量 (kWh/d) 条目的反馈</p>")
            ),
            array(
               "id_num"=>6,
-              "name"=>_("x input"),
+              "name"=>_("x 乘法输入"),
               "short"=>"x inp",
               "argtype"=>ProcessArg::INPUTID,
               "function"=>"times_input",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Input"),
-              "description"=>_("<p>Multiplies the current value with the last value from other input as selected from the input list.</p>")
+              "description"=>_("<p>将当前值与从输入列表中选择的其他输入的最后一个值相乘。</p>")
            ),
            array(
               "id_num"=>7,
-              "name"=>_("Input on-time"),
+              "name"=>_("按时输入"),
               "short"=>"ontime",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"input_ontime",
@@ -152,11 +152,11 @@ class Process_ProcessList
               "group"=>_("Input"),
               "engines"=>array(Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p>Counts the amount of time that an input is high in each day and logs the result to a feed. Created for counting the number of hours a solar hot water pump is on each day</p>")
+              "description"=>_("<p>计算每天输入高的时间量并将结果记录到反馈中。为计算太阳能热水泵每天工作的小时数而创建</p>")
            ),
            array(
               "id_num"=>8,
-              "name"=>_("Wh increments to kWh/d"),
+              "name"=>_("瓦时 转换为 千瓦时/天"),
               "short"=>"whinckwhd",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"whinc_to_kwhd",
@@ -165,11 +165,11 @@ class Process_ProcessList
               "group"=>_("Power & Energy"),
               "engines"=>array(Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p>Accumulate Wh measurements into kWh/d.<p><b>Input</b>: energy increments in Wh.</p>")
+              "description"=>_("<p>将 Wh 测量值累积为 kWh/d。<p><b>输入</b>：以 Wh 为单位的能量增量。</p>")
            ),
            array(
               "id_num"=>9,
-              "name"=>_("kWh to kWh/d (OLD)"),
+              "name"=>_("千瓦时 转换为 千瓦时/天 (OLD)"),
               "short"=>"kwhkwhdold",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"kwh_to_kwhd_old",
@@ -181,7 +181,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>10,
-              "name"=>_("Update feed at day"),
+              "name"=>_("每天更新反馈"),
               "short"=>"update",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"update_feed_data",
@@ -190,33 +190,33 @@ class Process_ProcessList
               "group"=>_("Input"),
               "engines"=>array(Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p>Updates or inserts daily value on the specified time (given by the JSON time parameter from the API) of the specified feed</p>")
+              "description"=>_("<p>在指定提要的指定时间（由 API 中的 JSON 时间参数给出）更新或插入每日值</p>")
            ),
            array(
               "id_num"=>11,
-              "name"=>_("+ input"),
+              "name"=>_("+ 加法输入"),
               "short"=>"+ inp",
               "argtype"=>ProcessArg::INPUTID,
               "function"=>"add_input",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Input"),
-              "description"=>_("<p>Adds the current value with the last value from other input as selected from the input list. The result is passed back for further processing by the next processor in the processing list.</p>")
+              "description"=>_("<p>将当前值与从输入列表中选择的其他输入的最后一个值相加。 结果被传回，以供处理列表中的下一个处理器进一步处理。</p>")
            ),
            array(
               "id_num"=>12,
-              "name"=>_("/ input"),
+              "name"=>_("/ 除法输入"),
               "short"=>"/ inp",
               "argtype"=>ProcessArg::INPUTID,
               "function"=>"divide_input",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Input"),
-              "description"=>_("<p>Divides the current value with the last value from other input as selected from the input list. The result is passed back for further processing by the next processor in the processing list.</p>")
+              "description"=>_("<p>将当前值除以从输入列表中选择的其他输入的最后一个值。 结果被传回，以供处理列表中的下一个处理器进一步处理。</p>")
            ),
            array(
               "id_num"=>13,
-              "name"=>_("Phaseshift"),
+              "name"=>_("相移"),
               "short"=>"phaseshift",
               "argtype"=>ProcessArg::VALUE,
               "function"=>"phaseshift",
@@ -227,7 +227,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>14,
-              "name"=>_("Accumulator"),
+              "name"=>_("累加器"),
               "short"=>"accumulate",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"accumulator",
@@ -235,11 +235,11 @@ class Process_ProcessList
               "unit"=>"",
               "group"=>_("Misc"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
-              "description"=>_("<p>Output feed accumulates by input value</p>")
+              "description"=>_("<p>输出到反馈，按输入值累加</p>")
            ),
            array(
               "id_num"=>15,
-              "name"=>_("Rate of change"),
+              "name"=>_("变化率"),
               "short"=>"rate",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"ratechange",
@@ -248,11 +248,11 @@ class Process_ProcessList
               "group"=>_("Misc"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES),
               "requireredis"=>true,
-              "description"=>_("<p>Output feed is the difference between the current value and the last</p>")
+              "description"=>_("<p>输出反馈，按当前值与上一个值之间的差</p>")
            ),
            array(
               "id_num"=>16,
-              "name"=>_("Histogram"),
+              "name"=>_("直方图"),
               "short"=>"hist",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"histogram",
@@ -264,7 +264,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>17,
-              "name"=>_("Daily Average"),
+              "name"=>_("日均值"),
               "short"=>"mean",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"average",
@@ -276,7 +276,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>18,
-              "name"=>_("Heat flux"),
+              "name"=>_("热通量"),
               "short"=>"flux",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"heat_flux",
@@ -288,7 +288,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>19,
-              "name"=>_("Power gained to kWh/d"),
+              "name"=>_("获得的功率为 千瓦时/天（kwh/d）"),
               "short"=>"pwrgain",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"power_acc_to_kwhd",
@@ -300,7 +300,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>20,
-              "name"=>_("Total pulse count to pulse increment"),
+              "name"=>_("总脉冲计数 转换为 脉冲增量"),
               "short"=>"pulsdiff",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"pulse_diff",
@@ -308,11 +308,11 @@ class Process_ProcessList
               "unit"=>"",
               "group"=>_("Pulse"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES),
-              "description"=>_("<p>Returns the number of pulses incremented since the last update for a input that is a cumulative pulse count. i.e If the input updates from 23400 to 23410 the result will be an incremenet of 10.</p>")
+              "description"=>_("<p>返回自上次更新以来累积脉冲计数的输入增加的脉冲数。 即如果输入从 23400 更新到 23410，结果将是 10 的增量。</p>")
            ),
            array(
               "id_num"=>21,
-              "name"=>_("kWh to Power"),
+              "name"=>_("千瓦时 转换为 瓦特"),
               "short"=>"kwhpwr",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"kwh_to_power",
@@ -321,22 +321,22 @@ class Process_ProcessList
               "group"=>_("Power & Energy"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES),
               "requireredis"=>true,
-              "description"=>_("<p>Convert accumulating kWh to instantaneous power</p>")
+              "description"=>_("<p>将累积千瓦时转换为瞬时功率</p>")
            ),
            array(
               "id_num"=>22,
-              "name"=>_("- input"),
+              "name"=>_("- 减法输入"),
               "short"=>"- inp",
               "argtype"=>ProcessArg::INPUTID,
               "function"=>"subtract_input",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Input"),
-              "description"=>_("<p>Subtracts from the current value the last value from other input as selected from the input list.</p>")
+              "description"=>_("<p>从当前值中减去从输入列表中选择的其他输入的最后一个值。</p>")
            ),
            array(
               "id_num"=>23,
-              "name"=>_("kWh to kWh/d"),
+              "name"=>_("千瓦时 转换为 千瓦时/天"),
               "short"=>"kwhkwhd",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"kwh_to_kwhd",
@@ -372,18 +372,18 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>26,
-              "name"=>_("Signed to unsigned"),
+              "name"=>_("有符号 转换为 无符号"),
               "short"=>"unsign",
               "argtype"=>ProcessArg::NONE,
               "function"=>"signed2unsigned",
               "datafields"=>0,
               "unit"=>"unsign",
               "group"=>_("Misc"),
-              "description"=>_("<p>Convert a number that was interpreted as a 16 bit signed number to an unsigned number.</p>")
+              "description"=>_("<p>将被解释为 16 位有符号数的数字转换为无符号数。</p>")
            ),
            array(
               "id_num"=>27,
-              "name"=>_("Max daily value"),
+              "name"=>_("每日最大值"),
               "short"=>"max",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"max_value",
@@ -392,11 +392,11 @@ class Process_ProcessList
               "group"=>_("Misc"),
               "engines"=>array(Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p>Maximal daily value. Upserts on the selected daily feed the highest value reached each day.</p>")
+              "description"=>_("<p>每日最大值。 在选定的每日反馈上更新每天达到的最高值。</p>")
            ),
            array(
               "id_num"=>28,
-              "name"=>_("Min daily value"),
+              "name"=>_("每日最小值"),
               "short"=>"min",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"min_value",
@@ -405,7 +405,7 @@ class Process_ProcessList
               "group"=>_("Misc"),
               "engines"=>array(Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY),
               "nochange"=>true,
-              "description"=>_("<p>Minimal daily value. Upserts on the selected daily feed the lowest value reached each day.</p>")
+              "description"=>_("<p>最小的每日价值。 在选定的每日反馈上更新每天达到的最低值。</p>")
            ),
            array(
               "id_num"=>29,
@@ -453,18 +453,18 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>33,
-              "name"=>_("Reset to ZERO"),
+              "name"=>_("重置为0"),
               "short"=>"0",
               "argtype"=>ProcessArg::NONE,
               "function"=>"reset2zero",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Misc"),
-              "description"=>_("<p>The value \"0\" is passed back for further processing by the next processor in the processing list.</p>")
+              "description"=>_("<p>值“0”被传回处理列表中的下一个处理器进一步处理。</p>")
            ),
            array(
               "id_num"=>34,
-              "name"=>_("Wh Accumulator"),
+              "name"=>_("瓦时累加器"),
               "short"=>"whacc",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"wh_accumulator",
@@ -473,11 +473,11 @@ class Process_ProcessList
               "group"=>_("Main"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES),
               "requireredis"=>true,
-              "description"=>_("<b>Wh Accumulator:</b> Use with emontx, emonth or emonpi pulsecount or an emontx running firmware <i>emonTxV3_4_continuous_kwhtotals</i> sending cumulative watt hours.<br><br>This processor ensures that when the emontx is reset the watt hour count in emoncms does not reset, it also checks filter's out spikes in energy use that are larger than a max power threshold set in the processor, assuming these are error's, the max power threshold is set to 60 kW. <br><br><b>Visualisation tip:</b> Feeds created with this input processor can be used to generate daily kWh data using the BarGraph visualisation with the delta property set to 1 and scale set to 0.001. See: <a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>Guide: Daily kWh</a><br><br>")
+              "description"=>_("<b>Wh 累加器：</b> 与 emontx、emonth 或 emonpi pulsecount 或 emontx 运行固件一起使用 <i>emonTxV3_4_continuous_kwhtotals</i> 发送累积瓦时。<br><br>此处理器确保当 emontx 处于 重置 emoncms 中的瓦时计数不会重置，它还会检查过滤器在能源使用中的峰值是否大于处理器中设置的最大功率阈值，假设这些是错误的，则最大功率阈值设置为 60 kW。 <br><br><b>可视化提示：</b> 使用此输入处理器创建的 Feed 可用于使用 BarGraph 可视化生成每日 kWh 数据，其中 delta 属性设置为 1，比例设置为 0.001。 请参阅：<a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>单位：每日千瓦时</a><br><br>")
            ),
            array(
               "id_num"=>35,
-              "name"=>_("Publish to MQTT"),
+              "name"=>_("发布到 MQTT"),
               "short"=>"MQTT",
               "argtype"=>ProcessArg::TEXT,
               "function"=>"publish_to_mqtt",
@@ -485,29 +485,29 @@ class Process_ProcessList
               "unit"=>"",
               "group"=>_("Misc"),
               "nochange"=>true,
-              "description"=>_("<p>Publishes value to MQTT topic e.g. 'home/power/kitchen'</p>")
+              "description"=>_("<p>向 MQTT 主题发布值，例如 '家庭/电源/厨房'</p>")
            ),
            array(
               "id_num"=>36,
-              "name"=>_("Reset to NULL"),
+              "name"=>_("重置为NULL"),
               "short"=>"null",
               "argtype"=>ProcessArg::NONE,
               "function"=>"reset2null",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Misc"),
-              "description"=>_("<p>Value is set to NULL.</p><p>Useful for conditional process to work on.</p>")
+              "description"=>_("<p>值设置为 NULL。</p><p>对条件处理很有用。</p>")
            ),
            array(
               "id_num"=>37,
-              "name"=>_("Reset to Original"),
+              "name"=>_("重置为原始值"),
               "short"=>"ori",
               "argtype"=>ProcessArg::NONE,
               "function"=>"reset2original",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Misc"),
-              "description"=>_("<p>The value is set to the original value at the start of the process list.</p>")
+              "description"=>_("<p>该值设置为进程列表开头的原始值。</p>")
            ),
            array(
               "id_num"=>42,
@@ -631,7 +631,7 @@ class Process_ProcessList
            ),
            array(
               "id_num"=>52,
-              "name"=>_("GOTO"),
+              "name"=>_("跳转"),
               "short"=>"GOTO",
               "argtype"=>ProcessArg::VALUE,
               "function"=>"goto_process",
@@ -639,7 +639,7 @@ class Process_ProcessList
               "unit"=>"",
               "group"=>_("Misc"),
               "nochange"=>true,
-              "description"=>_("<p>Jumps the process execution to the specified position.</p><p><b>Warning</b><br>If you're not careful you can create a goto loop on the process list.<br>When a loop occurs, the API will appear to lock until the server php times out with an error.</p>")
+              "description"=>_("<p>将进程执行跳转到指定位置。</p><p><b>警告</b><br>如果你不小心你可以在进程列表上创建一个goto循环。<br> 发生循环时，API 会出现锁定状态，直到服务器 php 超时并出现错误。</p>")
            ),
            array(
               "id_num"=>53,
@@ -721,41 +721,41 @@ class Process_ProcessList
               "internalerror_desc"=>"Processlist disabled due to errors found during execution."
            ),
            array(
-              "name"=>_("Max value allowed"),
+              "name"=>_("允许的最大值"),
               "short"=>"<max",
               "argtype"=>ProcessArg::VALUE,
               "function"=>"max_value_allowed",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Limits"),
-              "description"=>_("<p>If value is greater than <i>max value allowed</i> then the value passed to following process will be the <i>max value allowed</i></p>"),
+              "description"=>_("<p>如果值大于<i>允许的最大值</i>，则传递给后续进程的值将是<i>允许的最大值</i></p>"),
               "requireredis"=>false,
               "nochange"=>false
            ),
            array(
-              "name"=>_("Min value allowed"),
+              "name"=>_("允许的最小值"),
               "short"=>">min",
               "argtype"=>ProcessArg::VALUE,
               "function"=>"min_value_allowed",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Limits"),
-              "description"=>_("<p>If value is lower than <i>min value allowed</i> then the value passed to following process will be the <i>min value allowed</i></p>"),
+              "description"=>_("<p>如果值小于<i>允许的最小值</i>，那么传递给后续进程的值将是<i>允许的最小值</i></p>"),
               "requireredis"=>false,
               "nochange"=>false
            ),
             array(
-                "name"=>_("Absolute value"),
+                "name"=>_("绝对值"),
                 "short"=>"abs",
                 "argtype"=>ProcessArg::VALUE,
                 "function"=>"abs_value",
                 "datafields"=>0,
                 "unit"=>"",
                 "group"=>_("Calibration"),
-                "description"=>_("<p>Return the absolute value of the current value. This can be useful for calibrating a particular variable on the web rather than by reprogramming hardware.</p>")
+                "description"=>_("<p>返回当前值的绝对值。 这对于校准网络上的特定变量而不是通过重新编程硬件很有用。</p>")
             ),
             array(
-              "name"=>_("kWh Accumulator"),
+              "name"=>_("千瓦时累加器"),
               "short"=>"kwhacc",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"kwh_accumulator",
@@ -764,10 +764,10 @@ class Process_ProcessList
               "group"=>_("Main"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES),
               "requireredis"=>true,
-              "description"=>_("<b>kWh Accumulator:</b>This processor removes resets from a cumulative kWh input, it also filter's out spikes in energy use that are larger than a max power threshold set in the processor, assuming these are error's, the max power threshold is set to 60 kW. <br><br><b>Visualisation tip:</b> Feeds created with this input processor can be used to generate daily kWh data using the BarGraph visualisation with the delta property set to 1 and scale set to 0.001. See: <a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>Guide: Daily kWh</a><br><br>")
+              "description"=>_("<b>kWh 累加器：</b>此处理器从累积 kWh 输入中移除复位，它还过滤掉大于处理器中设置的最大功率阈值的能源使用峰值，假设这些是错误的，即最大功率阈值 设置为 60 kW。 <br><br><b>可视化提示：</b> 使用此输入处理器创建的 Feed 可用于使用 BarGraph 可视化生成每日 kWh 数据，其中 delta 属性设置为 1，比例设置为 0.001。 请参阅：<a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>千瓦时：每日千瓦时</a><br><br>")
            ),
            array(
-              "name"=>_("Log to feed (Join)"),
+              "name"=>_("记录到反馈 (Join)"),
               "short"=>"log_join",
               "argtype"=>ProcessArg::FEEDID,
               "function"=>"log_to_feed_join",
@@ -776,27 +776,27 @@ class Process_ProcessList
               "group"=>_("Main"),
               "engines"=>array(Engine::PHPFINA,Engine::PHPTIMESERIES,Engine::MYSQL,Engine::MYSQLMEMORY,Engine::CASSANDRA),
               "nochange"=>true,
-              "description"=>_("<p><b>Log to feed (Join):</b> In addition to the standard log to feed process, this process links missing data points with a straight line between the newest value and the previous value. It is designed for use with total cumulative kWh meter reading inputs, producing a feed that can be used with the delta property when creating bar graphs. See: <a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>Guide: Daily kWh</a><br><br>")
+              "description"=>_("<p><b>记录到馈送（join）：</b> 除了标准的记录到馈送过程之外，此过程还通过最新值和先前值之间的直线将缺失的数据点链接起来。 它设计用于总累积 kWh 抄表输入，在创建条形图时生成可与 delta 属性一起使用的馈送。 请参阅：<a href='https://guide.openenergymonitor.org/setup/daily-kwh/' target='_blank' rel='noopener'>单位：每日千瓦时</a><br><br>")
            ),
            array(
-              "name"=>_("max by input"),
+              "name"=>_("最大输入"),
               "short"=>"max_inp",
               "argtype"=>ProcessArg::INPUTID,
               "function"=>"max_input",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Input"),
-              "description"=>_("<p>Limits the current value by the last value from an input as selected from the input list. The result is passed back for further processing by the next processor in the processing list.</p>")
+              "description"=>_("<p>将当前值限制为从输入列表中选择的输入的最后一个值。 结果被传回，以供处理列表中的下一个处理器进一步处理。</p>")
            ),
            array(
-              "name"=>_("min by input"),
+              "name"=>_("最小输入"),
               "short"=>"min_inp",
               "argtype"=>ProcessArg::INPUTID,
               "function"=>"min_input",
               "datafields"=>0,
               "unit"=>"",
               "group"=>_("Input"),
-              "description"=>_("<p>Limits the current value by the last value from an input as selected from the input list. The result is passed back for further processing by the next processor in the processing list.</p>")
+              "description"=>_("<p>将当前值限制为从输入列表中选择的输入的最后一个值。 结果被传回，以供处理列表中的下一个处理器进一步处理。</p>")
            ),
            array(
               "name"=>_("max by feed"),

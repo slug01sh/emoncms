@@ -45,34 +45,34 @@
 <div id="processlistModal" class="modal hide keyboard modal-processlist" tabindex="-1" role="dialog" aria-labelledby="processlistModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-header">
         <button type="button" class="close" id="close">×</button>
-        <h3><b><span id="contextname"></span></b> <?php echo dgettext('process_messages','process list setup'); ?></h3>
+        <h3><b><span id="contextname"></span></b> <?php echo dgettext('process_messages','过程设置列表'); ?></h3>
     </div>
     <div class="modal-body" id="processlist-ui">
-        <p><?php echo dgettext('process_messages','Processes are executed sequentially with the result value being passed down for further processing to the next processor on this processing list.'); ?></p>
+        <p><?php echo dgettext('process_messages','过程按处理器的顺序执行，结果值向下传递，以便进一步处理到此处理列表上的下一个处理器。'); ?></p>
         
-            <div id="noprocess" class="alert"><?php echo dgettext('process_messages','You have no processes defined'); ?></div>
+            <div id="noprocess" class="alert"><?php echo dgettext('process_messages','您没有定义任何过程'); ?></div>
             
             <table id="process-table" class="table table-hover">
                 <tr>
                     <th style="width:5%;"></th>
-                    <th style="width:5%;"><?php echo dgettext('process_messages','Order'); ?></th>
-                    <th><?php echo dgettext('process_messages','Process'); ?></th>
+                    <th style="width:5%;"><?php echo dgettext('process_messages','序号'); ?></th>
+                    <th><?php echo dgettext('process_messages','过程'); ?></th>
                     <th style="width:5%; text-align:right;opacity:.8" title="Hover over the short names below to get the full description"><i class="icon icon-question-sign"></i></th>
-                    <th><?php echo dgettext('process_messages','Arg'); ?></th>
-                    <th><span class="hidden-md"><?php echo dgettext('process_messages','Latest'); ?></span></th>
-                    <th colspan='2'><?php echo dgettext('process_messages','Actions'); ?></th>
+                    <th><?php echo dgettext('process_messages','参数'); ?></th>
+                    <th><span class="hidden-md"><?php echo dgettext('process_messages','最后更新'); ?></span></th>
+                    <th colspan='2'><?php echo dgettext('process_messages','操作'); ?></th>
                 </tr>
                 <tbody id="process-table-elements"></tbody>
             </table>
 
             <table class="table">
             <tr><th>
-                <span id="process-header-add"><?php echo dgettext('process_messages','Add process'); ?>:
+                <span id="process-header-add"><?php echo dgettext('process_messages','添加过程'); ?>:
                     <a href="#" onclick="selectProcess(event)" class="label label-info" data-processid="process__log_to_feed">log</a>
                     <a href="#" onclick="selectProcess(event)" class="label label-info" data-processid="process__power_to_kwh">kwh</a>
                     <a href="#" onclick="selectProcess(event)" class="label label-warning" data-processid="process__add_input">+inp</a>
                 </span>
-                <span id="process-header-edit"><?php echo dgettext('process_messages','Edit process'); ?>:</span>
+                <span id="process-header-edit"><?php echo dgettext('process_messages','编辑过程'); ?>:</span>
             </th></tr>
             <tr>
                 <td>
@@ -80,21 +80,21 @@
 
                         <span id="type-value" style="display:none">
                             <div class="input-prepend">
-                                <span class="add-on value-select-label"><?php echo dgettext('process_messages','Value'); ?></span>
-                                <input type="text" id="value-input" class="input-medium" placeholder="<?php echo dgettext('process_messages','Type value...'); ?>" />
+                                <span class="add-on value-select-label"><?php echo dgettext('process_messages','值'); ?></span>
+                                <input type="text" id="value-input" class="input-medium" placeholder="<?php echo dgettext('process_messages','输入值...'); ?>" />
                             </div>
                         </span>
                         
                         <span id="type-text" style="display:none">
                             <div class="input-prepend">
-                                <span class="add-on text-select-label"><?php echo dgettext('process_messages','Text'); ?></span>
-                                <input type="text" id="text-input" class="input-large" placeholder="<?php echo dgettext('process_messages','Type text...'); ?>" />
+                                <span class="add-on text-select-label"><?php echo dgettext('process_messages','文本'); ?></span>
+                                <input type="text" id="text-input" class="input-large" placeholder="<?php echo dgettext('process_messages','输入文本...'); ?>" />
                             </div>
                         </span>
 
                         <span id="type-input" style="display:none">
                             <div class="input-prepend">
-                                <span class="add-on input-select-label"><?php echo dgettext('process_messages','Input'); ?></span>                   
+                                <span class="add-on input-select-label"><?php echo dgettext('process_messages','输入'); ?></span>                   
                                 <div class="btn-group">
                                     <select id="input-select" class="input-medium"></select>
                                 </div>
@@ -103,7 +103,7 @@
 
                         <span id="type-schedule" style="display:none">
                             <div class="input-prepend">
-                                <span class="add-on schedule-select-label"><?php echo dgettext('process_messages','Schedule'); ?></span>
+                                <span class="add-on schedule-select-label"><?php echo dgettext('process_messages','计划'); ?></span>
                                 <div class="btn-group">
                                     <select id="schedule-select" class="input-large"></select>
                                 </div>
@@ -113,7 +113,7 @@
                         <span id="type-feed"> 
                                                         
                             <div class="input-prepend">
-                                <span class="add-on feed-select-label"><?php echo dgettext('process_messages','Feed'); ?></span>
+                                <span class="add-on feed-select-label"><?php echo dgettext('process_messages','反馈'); ?></span>
                                 <div class="btn-group">
                                     <select id="feed-select" class="input-medium" style="border-bottom-right-radius: 0;border-top-right-radius: 0;"></select>
                                     <div class="autocomplete">
@@ -124,7 +124,7 @@
                             </div>
                             
                             <div class="input-prepend">
-                                <span class="add-on feed-engine-label"><?php echo dgettext('process_messages','Engine'); ?></span>
+                                <span class="add-on feed-engine-label"><?php echo dgettext('process_messages','引擎'); ?></span>
                                 <div class="btn-group">
                                     <select id="feed-engine" class="input-medium">
                                         <?php foreach (Engine::get_all_descriptive() as $engine) { ?>
@@ -132,7 +132,7 @@
                                         <?php } ?>
                                     </select>
                                     <select id="feed-interval" class="input-mini">
-                                        <option value=""><?php echo dgettext('process_messages','Select interval'); ?></option>                    
+                                        <option value=""><?php echo dgettext('process_messages','选择间隔'); ?></option>                    
                                         <?php foreach (Engine::available_intervals() as $i) { ?>
                                         <option value="<?php echo $i["interval"]; ?>"><?php echo dgettext('process_messages',$i["description"]); ?></option>
                                         <?php } ?>
@@ -150,10 +150,10 @@
                         </span>
                         <span id="type-btn-edit" style="display:none">
                             <div class="input-prepend">
-                                <button id="process-edit" class="btn btn-info" style="border-radius: 4px;"><?php echo dgettext('process_messages','Edit'); ?></button>
+                                <button id="process-edit" class="btn btn-info" style="border-radius: 4px;"><?php echo dgettext('process_messages','编辑'); ?></button>
                             </div>
                             <div class="input-prepend">
-                                <button id="process-cancel" class="btn" style="border-radius: 4px;"><?php echo dgettext('process_messages','Cancel'); ?></button>
+                                <button id="process-cancel" class="btn" style="border-radius: 4px;"><?php echo dgettext('process_messages','取消'); ?></button>
                             </div>
                         </span>
                 </td>
@@ -164,7 +164,7 @@
             </table>
     </div>
     <div class="modal-footer">
-        <button class="btn" id="close"><?php echo dgettext('process_messages','Close'); ?></button>
-        <button id="save-processlist" class="btn btn-success" style="float:right"><?php echo dgettext('process_messages','Not modified'); ?></button>
+        <button class="btn" id="close"><?php echo dgettext('process_messages','关闭'); ?></button>
+        <button id="save-processlist" class="btn btn-success" style="float:right"><?php echo dgettext('process_messages','未修改'); ?></button>
     </div>
 </div>

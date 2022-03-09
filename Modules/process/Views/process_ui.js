@@ -493,8 +493,8 @@ var processlist_ui =
         } else {
           $("#description").html(processlist_ui.processlist[processid]['description']);
 
-          var does_modify = "<p><b>Output:</b> "+_Tr("Modified value passed onto next process step.")+"</p>";
-          var does_not_modify = "<p><b>Output:</b> "+_Tr("Does NOT modify value passed onto next process step.")+"</p>";
+          var does_modify = "<p><b>输出:</b> "+_Tr("Modified value passed onto next process step.")+"</p>";
+          var does_not_modify = "<p><b>输出:</b> "+_Tr("Does NOT modify value passed onto next process step.")+"</p>";
           var redis_required = "<p><b>REDIS:</b> "+_Tr("Requires REDIS.")+"</p>";
           var help = _Tr("Click here for additional information about this process.");
 
@@ -645,7 +645,7 @@ var processlist_ui =
             feedgroups[group].push(this.feedlist[z]);
         }
     }
-    var out = "<option value=-1>CREATE NEW:</option>";
+    var out = "<option value=-1>创建新的反馈</option>";
     for (z in feedgroups) {
       out += "<optgroup label='"+z+"'>";
       for (p in feedgroups[z]) {
